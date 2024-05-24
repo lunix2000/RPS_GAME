@@ -10,9 +10,9 @@ function playRound(playerSelection, computerSelection) {
   let computerChoice = computerSelection.toLowerCase();
   let playerChoice = playerSelection.toLowerCase();
 
-  if ((playerChoice === 'Rock' && computerChoice === 'Scissors') ||
-      (playerChoice === 'Scissors' && computerChoice === 'Paper') ||
-      (playerChoice === 'Paper' && computerChoice === 'Rock')) {
+  if ((playerChoice === 'rock' && computerChoice === 'scissors') ||
+      (playerChoice === 'scissors' && computerChoice === 'paper') ||
+      (playerChoice === 'paper' && computerChoice === 'rock')) {
     return `You win because ${playerChoice} beats ${computerChoice}`;
   } else if (playerChoice === computerChoice) {
     return "It's a tie";
