@@ -28,7 +28,15 @@ function game() {
   for (let round = 1; round <= 5; round++) {
     console.log(`Round ${round}:`);
 
-    const playerSelection = prompt("Enter your choice (Rock, Paper, or Scissors):").toLowerCase();
+    let playerSelection;
+    while (true) {
+      playerSelection = prompt("Enter your choice (Rock, Paper, or Scissors):").toLowerCase();
+      if (playerSelection === 'rock' || playerSelection === 'paper' || playerSelection === 'scissors') {
+        break;
+      } else {
+        console.log("Invalid choice. Please enter Rock, Paper, or Scissors.");
+      }
+    }
     const computerSelection = computerPlay();
 
     console.log(`You chose: ${playerSelection}`);
