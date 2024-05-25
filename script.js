@@ -11,8 +11,8 @@ function playRound(playerSelection, computerSelection) {
   let playerChoice = playerSelection.toLowerCase();
 
   if ((playerChoice === 'rock' && computerChoice === 'scissors') ||
-      (playerChoice === 'scissors' && computerChoice === 'paper') ||
-      (playerChoice === 'paper' && computerChoice === 'rock')) {
+    (playerChoice === 'scissors' && computerChoice === 'paper') ||
+    (playerChoice === 'paper' && computerChoice === 'rock')) {
     return `You win because ${playerChoice} beats ${computerChoice}`;
   } else if (playerChoice === computerChoice) {
     return "It's a tie";
@@ -30,7 +30,12 @@ function game() {
 
     let playerSelection;
     while (true) {
-      playerSelection = prompt("Enter your choice (Rock, Paper, or Scissors):").toLowerCase();
+      let playerPrompt = prompt("Enter your choice (Rock, Paper, or Scissors):");
+      if (playerPrompt === null) {
+        console.log("Goodbye!");
+        return null;
+      }
+      playerSelection = playerPrompt.toLowerCase();
       if (playerSelection === 'rock' || playerSelection === 'paper' || playerSelection === 'scissors') {
         break;
       } else {
@@ -57,16 +62,16 @@ function game() {
 
   if (playerScore > computerScore) {
     console.log("You have fought hard battles, facing tough times and relentless opponents.");
-    setTimeout(() => {console.log("But with your last swing, you emerge victorious, defeating all odds.");}, 2000);
-    setTimeout(() => {console.log("Enemy slain! Victory is yours!");}, 4000);
+    setTimeout(() => { console.log("But with your last swing, you emerge victorious, defeating all odds."); }, 2000);
+    setTimeout(() => { console.log("Enemy slain! Victory is yours!"); }, 4000);
   } else if (playerScore < computerScore) {
     console.log("You have fought valiantly, but the enemy proves too strong.");
-    setTimeout(() => {console.log("With every effort, you stand tall, but ultimately, victory eludes your grasp.");}, 2000);
-    setTimeout(() => {console.log("Defeat! The enemy has triumphed.");}, 4000);
+    setTimeout(() => { console.log("With every effort, you stand tall, but ultimately, victory eludes your grasp."); }, 2000);
+    setTimeout(() => { console.log("Defeat! The enemy has triumphed."); }, 4000);
   } else {
     console.log("The battlefield echoes with the clash of steel, neither side yielding an inch.");
-    setTimeout(() => {console.log("In the end, the struggle concludes in a stalemate, with neither side emerging triumphant.");}, 2000);
-    setTimeout(() => {console.log("It's a draw! The battle rages on.");}, 4000);
+    setTimeout(() => { console.log("In the end, the struggle concludes in a stalemate, with neither side emerging triumphant."); }, 2000);
+    setTimeout(() => { console.log("It's a draw! The battle rages on."); }, 4000);
   }
 }
 
